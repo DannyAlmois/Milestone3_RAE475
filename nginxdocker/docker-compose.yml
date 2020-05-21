@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+ curl:
+  build: ./
+  command: python ./curl.py
+  ports:
+  - 8088:80
+  - 434:434
+ apache2:
+  build: ./
+  command: python ./apache2.py
+  network_mode: host
+  depends_on:
+  - server
+
+
+

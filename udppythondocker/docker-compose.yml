@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+ server:
+  build: server/
+  command: python ./udpserver.py
+  ports:
+  - 20001:20001
+ client:
+  build: client/
+  command: python ./udpclient.py
+  network_mode: host
+  depends_on:
+  - server
+

@@ -1,0 +1,16 @@
+version: '2.7'
+services:
+ server:
+  build: ./
+  command: python ./telnetserver.py
+  ports:
+  - 10067:23
+ client:
+  build: ./
+  command: python ./telnetclient.py
+  network_mode: host
+  depends_on:
+  - server
+
+
+

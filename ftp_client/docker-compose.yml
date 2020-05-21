@@ -1,0 +1,5 @@
+ftpclient:
+  build: .
+  volumes: 
+    - .:/usr/src/ftp
+
